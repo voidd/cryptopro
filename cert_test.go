@@ -14,7 +14,7 @@ func TestCertGetIssuer(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	cert, err := CertFindCertificateInStore(store, "39da49123dbe70e953f394074d586eb692f3328e", CERT_FIND_SHA1_HASH)
+	cert, err := CertFindCertificateInStore(store, "a0dbdc9a9cc0fcafcbb6161f603ff7d5c4d7b548", CERT_FIND_SHA1_HASH)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -91,7 +91,7 @@ func TestCertGetInfo(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	cert, err := CertFindCertificateInStore(store, "39da49123dbe70e953f394074d586eb692f3328e", CERT_FIND_SHA1_HASH)
+	cert, err := CertFindCertificateInStore(store, "a0dbdc9a9cc0fcafcbb6161f603ff7d5c4d7b548", CERT_FIND_SHA1_HASH)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -190,7 +190,7 @@ func TestCryptImportPublicKeyInfo(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	cert, err := CertFindCertificateInStore(store, "39da49123dbe70e953f394074d586eb692f3328e", CERT_FIND_SHA1_HASH)
+	cert, err := CertFindCertificateInStore(store, "a0dbdc9a9cc0fcafcbb6161f603ff7d5c4d7b548", CERT_FIND_SHA1_HASH)
 	if err != nil {
 		t.Fatal(err)
 	}

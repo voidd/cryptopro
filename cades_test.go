@@ -6,8 +6,7 @@ import (
 )
 
 func TestCadesBes(t *testing.T) {
-	thumbprint := "4c880bda646323cad15a8708ba947aa8043e03a4"
-	detached := true
+	thumbprint := "a0dbdc9a9cc0fcafcbb6161f603ff7d5c4d7b548"
 	file := []byte("test msg")
 
 	// открываем хранилище
@@ -43,9 +42,25 @@ func TestCadesBes(t *testing.T) {
 		t.Fatal(fmt.Errorf("get private key failed: %w", err))
 	}
 
-	_, err = SignMessageCadesBes(cert, detached, file)
+	hash, err := CreateCryptHash(prov, CALG_GR3411_2012_256)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = hash.CryptHashData(file)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	val, err := hash.CryptGetHashParam()
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	fmt.Printf("byte array:\t %v \n hash value: \t %x \n", file, val)
+
+	_, err = SignMessageCadesXlt(cert, val)
 	if err != nil {
 		t.Fatal(fmt.Errorf("sign message failed: %w", err))
 	}
-
 }

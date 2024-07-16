@@ -16,10 +16,7 @@ func TestCryptSignHash(t *testing.T) {
 		t.Fatal("Can't open MY store")
 	}
 
-	//client, err := CertFindCertificateInStore(store, "39da49123dbe70e953f394074d586eb692f3328e",
-	//	CERT_FIND_SHA1_HASH)
-
-	client, err := CertFindCertificateInStore(store, "365050de109cbe26a1f1a09b5a10c6485d6bbe56",
+	client, err := CertFindCertificateInStore(store, "a0dbdc9a9cc0fcafcbb6161f603ff7d5c4d7b548",
 		CERT_FIND_SHA1_HASH)
 	defer CertFreeCertificateContext(client)
 	if err != nil {
