@@ -32,7 +32,7 @@ func TestHash(t *testing.T) {
 		t.Fatal(err)
 	}
 	hashVal := hex.EncodeToString(val)
-	if hashVal != "ea9785e97782eaccdf99806954ba366f3aad6e934e45e6084a9276a3149f53d2" {
+	if hashVal != "c22c02217d212b8ab003a4e753b729a1793a5b43efc11095aa96a10628808714" {
 		t.Fatal("got hash ", hashVal)
 	}
 

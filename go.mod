@@ -1,3 +1,3 @@
-module github.com/kirillx55/cryptopro
+module github.com/voidd/cryptopro
 
 go 1.18
