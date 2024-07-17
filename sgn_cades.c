@@ -123,6 +123,7 @@ int sign_message_cades_xlt(PCCERT_CONTEXT pCertContext, BYTE* data, char* out, i
 	if (pChainContext)
 		CertFreeCertificateChain(pChainContext);
 
+	strcpy(out, pSignedMessage->pbData);
 	*size = pSignedMessage->cbData;
 
 	return 0;
